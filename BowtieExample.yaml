@@ -19,3 +19,8 @@ fieldGroups:
         fieldType: "MultiS3File"
         label: "fastq"
         msgText: "FastqInputFile"
+      indexFileName:
+        name: "indexFileName"
+        fieldType: "text"
+        label: "indexFileName"
+        msgText: "Name of the Index file for input to bowtie2"
