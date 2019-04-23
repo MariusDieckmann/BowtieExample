@@ -9,6 +9,7 @@ RUN apt-get install -y libbz2-dev
 RUN apt-get install -y liblzma-dev
 RUN apt-get install -y build-essential
 RUN apt-get install -y curl
+RUN apt-get install perl
 
 RUN mkdir /data
 WORKDIR /data
