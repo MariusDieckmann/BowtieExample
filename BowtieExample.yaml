@@ -19,6 +19,11 @@ fieldGroups:
         fieldType: "MultiS3File"
         label: "fastq"
         msgText: "FastqInputFile"
+      index:
+        name: "index"
+        fieldType: "SingleS3File"
+        label: "fastq"
+        msgText: "FastqInputFile"
       indexFileName:
         name: "indexFileName"
         fieldType: "text"
