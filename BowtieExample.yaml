@@ -1,0 +1,21 @@
+name: "bowtieexample"
+image: "www.computational.bio.uni-giessen.de:5003/bowtieexample:latest"
+description: "Bowtie and SAM-Tools example"
+inputFormat:
+  - "fastq"
+outputFormat:
+  - "vcf"
+tags:
+  - "snp calling"
+startup_args:
+  - "./script.sh"
+fieldGroups:
+  raw_data:
+    name: "raw_data"
+    label: "Fastq files"
+    fieldList:
+      input:
+        name: "input"
+        fieldType: "MultiS3File"
+        label: "fastq"
+        msgText: "FastqInputFile"

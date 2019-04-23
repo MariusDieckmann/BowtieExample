@@ -32,3 +32,5 @@ FROM ubuntu
 
 COPY --from=BowtieBin /data/bin/samtools /bin
 COPY --from=BowtieBin /data/bowtie2-2.3.5.1-linux-x86_64/bowtie2 /bin
+
+COPY script.sh .
