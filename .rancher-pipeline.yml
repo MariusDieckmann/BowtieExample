@@ -1,0 +1,11 @@
+﻿stages:
+  - name: build
+    steps:
+      - publishImageConfig:
+          dockerfilePath: ./Dockerfile
+          buildContext: .
+          tag: BowtieExample
+          pushRemote: true
+          registry: www.computational.bio.uni-giessen.de:5003
+timeout: 60
+notification: {}
