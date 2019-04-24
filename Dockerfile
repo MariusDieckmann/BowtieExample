@@ -33,4 +33,4 @@ COPY script.sh .
 USER root
 
 RUN mkdir -p /mnt/results
-RUN chmod 755 script.sh
+RUN chmod 777 script.sh
