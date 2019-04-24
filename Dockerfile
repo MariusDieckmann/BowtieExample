@@ -23,7 +23,7 @@ RUN make
 RUN make install
 
 WORKDIR /data/bin
-RUN ls
+RUN ls -alh
 
 FROM biocontainers/bowtie2:v2.2.9_cv2
 
