@@ -16,13 +16,13 @@ fieldGroups:
     fieldList:
       input:
         name: "input"
-        fieldType: "MultiS3File"
-        label: "fastq"
+        fieldType: "SingleS3File"
+        label: "Input files"
         msgText: "FastqInputFile"
       index:
         name: "index"
         fieldType: "SingleS3File"
-        label: "fastq"
+        label: "Index files"
         msgText: "FastqInputFile"
       indexFileName:
         name: "indexFileName"
