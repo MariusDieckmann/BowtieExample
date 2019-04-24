@@ -1,20 +1,35 @@
 FROM ubuntu as BowtieBin
 
 RUN apt-get update
-RUN apt-get install unzip
+RUN apt-get install -y unzip
+RUN apt-get install -y gcc
+RUN apt-get install libncurses5 libncurses5-dev
+RUN apt-get install zlib1g-dev
+RUN apt-get install -y libbz2-dev
+RUN apt-get install -y liblzma-dev
+RUN apt-get install -y build-essential
+RUN apt-get install -y curl
+RUN apt-get install perl
 
 RUN mkdir /data
 WORKDIR /data
 
-ADD https://github.com/BenLangmead/bowtie2/releases/download/v2.3.5.1/bowtie2-2.3.5.1-linux-x86_64.zip .
+ADD https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 .
+RUN tar -xvf samtools-1.9.tar.bz2
 
-RUN unzip bowtie2-2.3.5.1-linux-x86_64
+WORKDIR samtools-1.9
+RUN ./configure --prefix=/data
+RUN make
+RUN make install
+
+WORKDIR /data/bin
 RUN ls
 
-FROM ubuntu
+FROM biocontainers/bowtie2:v2.2.9_cv2
 
 COPY --from=BowtieBin /data/bin/samtools /bin
-COPY --from=BowtieBin /data/bowtie2-2.3.5.1-linux-x86_64 /bin
 
 COPY script.sh .
+USER root
+
 RUN chmod 755 script.sh
