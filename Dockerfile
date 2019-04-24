@@ -32,4 +32,5 @@ COPY --from=BowtieBin /data/bin/samtools /bin
 COPY script.sh .
 USER root
 
+RUN mkdir -p /mnt/results
 RUN chmod 755 script.sh
