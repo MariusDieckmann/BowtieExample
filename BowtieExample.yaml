@@ -8,7 +8,7 @@ outputFormat:
 tags:
   - "snp calling"
 startup_args:
-  - "./script.sh"
+  - "mkdir -p /mnt/workflow_data/results && ./script.sh"
 fieldGroups:
   raw_data:
     name: "raw_data"
