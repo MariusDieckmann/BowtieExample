@@ -30,8 +30,6 @@ FROM biocontainers/bowtie2:v2.2.9_cv2
 COPY --from=BowtieBin /data/bin/samtools /bin
 
 COPY script.sh .
-USER root
 
-RUN mkdir -p /mnt/results
-RUN chmod -R 777 /mnt/results
+USER root
 RUN chmod 777 script.sh
